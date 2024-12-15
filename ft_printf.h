@@ -1,16 +1,14 @@
 #ifndef FT_PRINTF_H
 #define FT_PRINTF_H
 
-#include <unistd.h>
 #include <stdarg.h>
-#include <stddef.h>
+#include <unistd.h>
 
-char *ft_strchr(const char *s, int c);
-int ft_putchar(char c);
-int ft_putnbr_hex(unsigned int n, char format);
-int ft_putnbr_unsigned(unsigned int n);
-int ft_putnbr(int n);
-int ft_putptr(unsigned long ptr);
-int ft_putstr(char *str)
+int ft_printf(const char *format, ...);
+void ft_putchar(char c, int *len);
+void ft_putstr(char *str, int *len);
+void ft_putnbr(long n, int *len);
+void ft_putnbr_base(unsigned long n, char *base, int base_len, int *len);
+void ft_handle_format(char format, va_list args, int *len);
 
 #endif
